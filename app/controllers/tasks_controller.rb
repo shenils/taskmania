@@ -9,15 +9,18 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.save!
-    redirect_to root_path
+
+    if @task.save
+      redirect_to root_path, notice: "Task Successfully Created"
+    else
+      render :new
+    end
+    
   end
 
+  private
 
-private
-  
-  def task_params
-    params.require(:task).permit(:title, :description)
-  end
-
+    def task_params
+      params.require(:task).permit(:title, :description)
+    end
 end

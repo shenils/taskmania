@@ -1,5 +1,5 @@
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
-@import "bootswatch/sandstone/variables";
+@import "bootswatch/superhero/variables";
 @import "bootstrap";
+@import "bootswatch/superhero/bootswatch";
 @import "common";
